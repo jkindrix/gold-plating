@@ -1,31 +1,25 @@
 name: lint entries
 
+# Deliberately unfiltered: this suite runs in about a second, and a required
+# status check that is path-filtered can leave a PR permanently "pending" when
+# no filtered path changed. Always running is the simplest safe gate.
 on:
   push:
-    paths:
-      - "entries/**"
-      - "scripts/**"
-      - "_template.md"
-      - "axes.md"
-      - ".github/workflows/lint.yml"
   pull_request:
-    paths:
-      - "entries/**"
-      - "scripts/**"
-      - "_template.md"
-      - "axes.md"
-      - ".github/workflows/lint.yml"
+
+# Least privilege: the job only reads the checkout.
+permissions:
+  contents: read
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      # NOTE: these actions are pinned by tag, not by commit SHA. Pinning by SHA
-      # is catalogued as a real hardening step in entries/git-repo.md (Provenance
-      # axis) and is a known, deliberate gap here — the flagship admits it rather
-      # than pretending otherwise.
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # Pinned to full commit SHAs (the tag is a comment, for humans): a moved
+      # tag can't silently change what runs. Catalogued in entries/git-repo.md
+      # under Reproducibility — and enabled here, so the catalog isn't lying.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.x"
       - name: Lint entries
