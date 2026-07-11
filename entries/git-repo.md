@@ -55,7 +55,7 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 *What am I eyeballing that I could measure?*
 
 - **CI analytics / flaky-test tracking** `[med] 🎭` — Dashboards of build duration, failure rate, and flaky tests over time. This repo's "test suite" is one linter that runs in under a second, so the dashboard would be a single flat line, lovingly rendered.
-- **DORA metrics** `[high] 🎭` — Compute lead time for changes, deployment frequency, change-failure rate, and mean-time-to-restore from the forge's API and chart them. A four-metric industry framework for measuring elite software delivery performance, pointed at a markdown repo maintained by one person for fun. Peak axis.
+- **DORA metrics** `[high] 🎭` — Compute the DORA software-delivery metrics from the forge's API and chart them: deployment frequency, change lead time, change-fail rate, failed-deployment recovery time, and — since the framework grew from its original four keys to five — deployment rework rate. An industry framework for measuring elite delivery performance, pointed at a markdown repo maintained by one person for fun. Peak axis. (That the metric count itself moved is a live reminder of what this whole entry signs up to maintain.)
 - **Repository insights over time** `[low] 🎭` — Snapshot traffic, clones, and contributor stats into a tracked artifact so you can chart the popularity of a repo about over-engineering repos. Recursion is a kind of telemetry.
 
 *(This axis is nearly all `🎭` here — a prose repo has almost nothing worth instrumenting, and pretending otherwise would be invention. Named honestly, then mostly declined.)*
@@ -119,3 +119,21 @@ Drop the bit. On a repository you genuinely care about — one other people will
 5. **Push mirrors** if the repo is important and lives on a platform that could lock you out. The one resilience item that isn't redundant with Git's own distribution.
 
 Everything above the coda is available when the ambition — or the bit — calls for it. Everything in the coda is worth doing the next time you start something you mean to keep.
+
+## Prior art & sources
+
+Every item above is a real, documented practice. Primary sources, tagged by kind:
+
+- **Branch protection, rulesets, required reviews & checks** — [GitHub: about protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches), [available ruleset rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets) `[official-docs]`
+- **CODEOWNERS auto-review** — [GitHub: about code owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) `[official-docs]`
+- **Merge queue** — [GitHub: managing a merge queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue) `[official-docs]`
+- **Signed commits** — [GitHub: commit signature verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification), [Pro Git: Signing Your Work](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work) `[official-docs]`
+- **SLSA build provenance** — [SLSA provenance spec](https://slsa.dev/spec/v1.0/provenance), [actions/attest-build-provenance](https://github.com/actions/attest-build-provenance) `[official-docs]`
+- **SBOM generation** — [Syft (SPDX / CycloneDX)](https://github.com/anchore/syft) `[official-docs]`
+- **Sigstore / cosign signing** — [Sigstore cosign quickstart](https://docs.sigstore.dev/quickstart/quickstart-cosign/) `[official-docs]`
+- **Dependabot** — [GitHub: Dependabot security updates](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates) `[official-docs]`
+- **CodeQL code scanning** — [GitHub: about code scanning with CodeQL](https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql) `[official-docs]`
+- **OpenSSF Scorecard** — [scorecard.dev](https://scorecard.dev/) `[official-docs]`
+- **Conventional Commits & semantic-release** — [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/), [semantic-release commit-analyzer](https://github.com/semantic-release/commit-analyzer) `[standard]`
+- **DORA metrics (now five)** — [dora.dev metrics guide](https://dora.dev/guides/dora-metrics-four-keys/) `[official-docs]`
+- **Architecture Decision Records** — [Nygard, "Documenting Architecture Decisions" (2011)](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions), [adr.github.io](https://adr.github.io/) `[practice]`
