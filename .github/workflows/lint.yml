@@ -1,0 +1,32 @@
+name: lint entries
+
+on:
+  push:
+    paths:
+      - "entries/**"
+      - "scripts/**"
+      - "_template.md"
+      - "axes.md"
+      - ".github/workflows/lint.yml"
+  pull_request:
+    paths:
+      - "entries/**"
+      - "scripts/**"
+      - "_template.md"
+      - "axes.md"
+      - ".github/workflows/lint.yml"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # NOTE: these actions are pinned by tag, not by commit SHA. Pinning by SHA
+      # is catalogued as a real hardening step in entries/git-repo.md (Provenance
+      # axis) and is a known, deliberate gap here — the flagship admits it rather
+      # than pretending otherwise.
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Lint entries
+        run: python3 scripts/lint-entries.py

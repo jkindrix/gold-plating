@@ -1,0 +1,56 @@
+name: Propose a gold-plating subject
+description: Suggest a new subject to over-engineer, or volunteer to write one.
+title: "entry: <subject>"
+labels: ["entry-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Two things make a subject a good fit: a **legible casual version** everyone
+        recognizes, and a **deep professional surface** that real practitioners
+        actually over-engineer. Keep the Prime Rule in mind — everything catalogued
+        must be real.
+  - type: input
+    id: subject
+    attributes:
+      label: Subject
+      description: The thing to over-engineer (e.g. "a home coffee setup").
+    validations:
+      required: true
+  - type: textarea
+    id: case
+    attributes:
+      label: Why it's a good subject
+      description: The casual version everyone knows, and the professional depth underneath it.
+    validations:
+      required: true
+  - type: textarea
+    id: prior-art
+    attributes:
+      label: Prior art (Prime Rule check)
+      description: Point at practitioners who do this in earnest. If you can't, it may not belong.
+    validations:
+      required: true
+  - type: checkboxes
+    id: axes
+    attributes:
+      label: Which axes seem to apply? (It's fine — expected — that some don't.)
+      options:
+        - label: Governance
+        - label: Reproducibility
+        - label: Automation
+        - label: Observability
+        - label: Provenance
+        - label: Resilience
+        - label: Optimization
+        - label: Aesthetics
+        - label: Meta
+  - type: dropdown
+    id: volunteer
+    attributes:
+      label: Are you volunteering to write it?
+      options:
+        - "Yes, I'll draft it"
+        - "No, just proposing"
+    validations:
+      required: true

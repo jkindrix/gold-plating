@@ -1,0 +1,8 @@
+# Code owners are auto-requested for review on any pull request touching a
+# matching path. On a solo repo this is pure ceremony — which is to say, it is
+# catalogued in entries/git-repo.md under the Governance axis, and enabled here
+# so the catalog isn't lying.
+
+*           @jkindrix
+/entries/   @jkindrix
+/axes.md    @jkindrix
