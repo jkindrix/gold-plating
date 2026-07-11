@@ -38,6 +38,7 @@ To keep that self-reference from quietly rotting, every citation points at an ac
 |-------|---------|--------|
 | [Gold-Plating a Git Repo](./entries/git-repo.md) | A version-controlled repository and its forge | Draft — the self-referential flagship |
 | [Gold-Plating a Cup of Coffee](./entries/coffee.md) | A single morning cup | Draft |
+| [Gold-Plating a Load of Laundry](./entries/laundry.md) | Household laundry | Draft — first entry to omit an axis on the record |
 
 <!-- Index note: a flat table is honest at this size. Past ~15 entries, group it
      by domain or generate it from entry frontmatter — but not before, since
