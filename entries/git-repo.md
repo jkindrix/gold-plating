@@ -64,7 +64,7 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 
 *Can I prove where it came from and what happened to it?*
 
-- **Signed commits** `[med] ⚖️` — Sign every commit with a GPG or SSH key so history carries verifiable authorship. Legitimately good practice; the "Verified" badge is also just satisfying. *(Catalogued; not yet configured on this repo's commits — an honest not-yet.)*
+- **Signed commits** `[med] ⚖️` — Sign every commit with a GPG or SSH key so history carries verifiable authorship. Legitimately good practice; the "Verified" badge is also just satisfying. *(Enabled here: every commit in this repo is GPG-signed with an rsa4096 key, verifiable via `git log --show-signature`. This line was itself corrected the moment signing turned on — the entry cannot stay true otherwise.)*
 - **Signed tags** `[low] ⚖️` — Sign release tags so a tag's authenticity is cryptographically checkable, not just its name.
 - **Citation-integrity checking** `[med] ⚖️` — This entry cites real files to back its claims about the repo. [`../scripts/lint-entries.py`](../scripts/lint-entries.py) verifies, on every push, that every cited path resolves — plus that each catalog item is tagged and the coda is present. It guarantees citation *resolution and structure*, not the semantic truth of the prose: it stops the document from citing a file that isn't there, which is citation rot, not misstatement. A deliberately modest guarantee, honestly named — and still the one place this repo's over-engineering earns its keep.
 - **SBOM generation** `[med] 🎭` — Emit a Software Bill of Materials cataloging every dependency of a build. There is no build and there are no dependencies, so the SBOM would certify a void. Beautiful, empty.
