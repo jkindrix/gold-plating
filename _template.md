@@ -9,7 +9,7 @@ context: A standalone catalog of ways to over-engineer <SUBJECT>. Organized by t
 <!--
 ENTRY CHECKLIST (delete before publishing):
 - [ ] Every item obeys the Prime Rule: real, done by someone in earnest at scale. No invented absurdity.
-- [ ] Items grouped under the nine axes from axes.md (omit axes that don't apply; keep the fixed order).
+- [ ] Items grouped under the axes from axes.md, each heading keeping its canonical number (Governance=1 … Meta=9). Omit axes that don't apply — that skips a number, it does not renumber the rest.
 - [ ] Each item tagged with Effort [low|med|high] and Bit-factor [⚖️|🎭].
 - [ ] The entry is narratively self-contained: it assumes the reader has seen no other entry. Links to shared infrastructure (axes.md) are fine; what's disallowed is depending on *other entries* — or on knowing "a series" exists — to make sense.
 - [ ] Ends with the Coda: the sincere, high-leverage subset. This is mandatory.
@@ -75,3 +75,12 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 
 1. …
 2. …
+
+## Prior art & sources
+
+<!-- The one section allowed to follow the Coda. 5–10 verified references backing
+     the catalog above; tag each [standard] [research] [official-docs] [practice].
+     Every link must resolve. Do NOT invent sources — an unsourceable claim is a
+     signal to soften or cut it, not to fabricate a citation. -->
+
+- **<Claim it backs>** — [Source](https://example.com) `[official-docs]`
