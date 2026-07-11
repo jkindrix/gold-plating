@@ -1,0 +1,10 @@
+Gold-Plating is dual-licensed by path:
+
+  - Prose and catalog content (entries/**, README.md, axes.md, _template.md,
+    CONTRIBUTING.md): Creative Commons Attribution 4.0 International.
+    See LICENSE-CC-BY-4.0.
+
+  - Code and configuration (scripts/**, .github/** including issue and
+    pull-request templates, .gitignore): MIT. See LICENSE-MIT.
+
+The License table in README.md restates this mapping.

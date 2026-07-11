@@ -35,7 +35,7 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 
 *Can I reproduce the exact result deterministically, every time?*
 
-- **Pinned CI action versions** `[low] ⚖️` — Reference actions by immutable commit SHA rather than a movable tag, so a supply-chain compromise of a tag can't silently change your build. This repo does **not** yet do this — its workflow pins by tag, and [`../.github/workflows/lint.yml`](../.github/workflows/lint.yml) says so in a comment. A real, admitted gap.
+- **Pinned CI action versions** `[low] ⚖️` — Reference actions by immutable commit SHA rather than a movable tag, so a supply-chain compromise of a tag can't silently change your build. *(Enabled here: [`../.github/workflows/lint.yml`](../.github/workflows/lint.yml) pins both actions to full commit SHAs, tag kept as a comment for humans. This item spent its first days as an admitted gap; the correction landed when the pin did.)*
 - **Zero-dependency tooling** `[low] ⚖️` — The strongest reproducibility move is having nothing to reproduce. The entry linter is deliberately pure-standard-library Python, so there is no lockfile to pin and no dependency to drift. Sometimes the over-engineered choice is the austere one.
 - **Devcontainer / declarative dev environment** `[med] 🎭` — Ship a `devcontainer.json` or a Nix flake so any contributor gets a bit-identical toolchain. For a repo whose toolchain is "a Python interpreter you already have," this is a spacesuit for a walk to the mailbox.
 - **Reproducible builds** `[high] 🎭` — Byte-identical outputs from identical inputs, verifiable by a third party. Meaningful for a compiler or a distro; there is no build here to make reproducible, which is itself the honest note.
@@ -44,7 +44,7 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 
 *What manual step can I remove?*
 
-- **CI on every push and PR** `[low] ⚖️` — The baseline. This repo runs its entry linter automatically ([`../.github/workflows/lint.yml`](../.github/workflows/lint.yml)) so no catalog can merge with a broken citation or a missing coda.
+- **CI on every push and PR** `[low] ⚖️` — The baseline. This repo commits a workflow ([`../.github/workflows/lint.yml`](../.github/workflows/lint.yml)) that runs the entry linter and its test suite on every push and pull request once the repo is hosted on a forge — and the same checks run locally with two commands in the meantime.
 - **Structured issue forms** `[low] ⚖️` — Replace the free-text issue box with a typed form. This repo ships one for proposing new subjects: [`../.github/ISSUE_TEMPLATE/new-entry.yml`](../.github/ISSUE_TEMPLATE/new-entry.yml). It even makes the proposer do the Prime-Rule check themselves.
 - **Bots: labeler, stale, welcome, release-drafter** `[med] 🎭` — Auto-label PRs by path, auto-close inactive issues, greet first-timers, continuously draft the next release's notes. A full bot fleet tending a repo that gets a commit a week is a beautiful thing to behold.
 - **semantic-release** `[med] 🎭` — Parse commit messages, compute the next version, tag, generate a changelog, and publish — all with no human touching a version number. Requires the discipline of Conventional Commits (see Meta) and a release cadence this repo does not have.
@@ -85,7 +85,7 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 - **CI caching** `[low] 🎭` — Cache dependencies and build outputs to shave seconds off a pipeline. This one already runs in about a second, so the cache would optimize a rounding error.
 - **Job matrices** `[low] 🎭` — Fan the linter across three operating systems and four language versions to prove a citation-checker behaves identically everywhere. Rigor as performance art.
 - **Concurrency / auto-cancel of superseded runs** `[low] 🎭` — Cancel in-flight CI when a newer commit arrives, saving compute. Meaningful at a thousand PRs a day; here it saves a second that was free.
-- **Path-filtered CI** `[low] ⚖️` — Skip the workflow entirely on changes that can't affect it. This repo's workflow already filters to the paths that matter, which is the rare optimization that also pays for itself in clarity.
+- **Path-filtered CI** `[low] ⚖️` — Skip the workflow entirely on changes that can't affect it. Real savings on a heavy suite — with one documented trap: a *required* status check that gets path-filtered away is left "pending," which can block the pull request forever. This repo's suite runs in about a second, so it runs on everything; the optimization would have cost more in edge cases than it saved in compute.
 
 ## 8. Aesthetics
 
@@ -112,7 +112,7 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 
 Drop the bit. On a repository you genuinely care about — one other people will read, use, or depend on — the moves that earn their keep, in priority order:
 
-1. **Branch protection + required CI + a real test/lint gate.** One rule (no direct pushes to main) plus one honest check that must pass. This single pairing prevents the large majority of "how did *that* get in" incidents and costs an afternoon.
+1. **Branch protection + required CI + a real test/lint gate.** One rule (no direct pushes to main) plus one honest check that must pass. This single pairing shuts the door on the whole "how did *that* get in" class of incident and costs an afternoon.
 2. **Signed commits and signed tags.** Cheap, permanent, and the one provenance step that matters before you have artifacts to attest. Turn it on once and forget it.
 3. **A crafted README and a PR/issue template.** The highest-leverage aesthetics-and-governance combo: it shapes every future contribution and every first impression, and it's all just files.
 4. **Conventional Commits, but only if you'll automate off them.** The discipline is worthless as decoration and valuable as fuel — adopt it the day you wire up changelog/version automation, not before.
@@ -122,7 +122,7 @@ Everything above the coda is available when the ambition — or the bit — call
 
 ## Prior art & sources
 
-Every item above is a real, documented practice. Primary sources, tagged by kind:
+Sources mapped to the catalog claims they back, tagged by kind. The handful of items with no row (mirrors, curated history, badges, and other everyday forge conveniences) rest on documented platform features and common practice you can confirm in any forge's settings page.
 
 - **Branch protection, rulesets, required reviews & checks** — [GitHub: about protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches), [available ruleset rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets) `[official-docs]`
 - **CODEOWNERS auto-review** — [GitHub: about code owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) `[official-docs]`

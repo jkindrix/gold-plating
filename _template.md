@@ -78,9 +78,12 @@ Bit-factor tags: `⚖️` genuinely worth it even here · `🎭` theater at this
 
 ## Prior art & sources
 
-<!-- The one section allowed to follow the Coda. 5–10 verified references backing
-     the catalog above; tag each [standard] [research] [official-docs] [practice].
-     Every link must resolve. Do NOT invent sources — an unsourceable claim is a
-     signal to soften or cut it, not to fabricate a citation. -->
+<!-- The one section allowed to follow the Coda. Verified references MAPPED to
+     the catalog claims they back; tag each [standard] [research] [official-docs]
+     [practice]. State plainly which items rest on established practice rather
+     than a citable document. Local links must be plain relative paths (optional
+     #fragment) — that's the subset the linter parses; external links are swept
+     weekly by scripts/check-links.py. Do NOT invent sources — an unsourceable
+     claim is a signal to soften or cut it, not to fabricate a citation. -->
 
 - **<Claim it backs>** — [Source](https://example.com) `[official-docs]`

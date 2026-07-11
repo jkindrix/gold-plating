@@ -26,16 +26,20 @@ whole project.)
 
 ## Before you open a PR
 
-Run the linter locally:
+Run the same checks CI runs (Python 3.9+, no dependencies):
 
 ```sh
-python3 scripts/lint-entries.py
+python3 scripts/lint-entries.py   # your entry against the structural contract
+python3 scripts/test-linter.py    # the linter against its adversarial fixtures
 ```
 
-It enforces the invariants that can be checked mechanically: the checklist is
-removed, the axis order is canonical, the Coda exists, and every local file
-citation resolves to a real path. The last check is what keeps the
-self-referential flagship honest — a citation can't rot without failing CI.
+The linter enforces the invariants that can be checked mechanically —
+frontmatter, canonical axis order, tagged items, the Coda, a sources section,
+and that every local citation resolves *inside the repo*. That last check is
+what keeps the self-referential flagship honest: a citation can't rot without
+failing CI. Local links must be plain relative paths (a `#fragment` is fine);
+reference-style links aren't parsed. External links aren't fetched on the
+required path — `scripts/check-links.py` sweeps those on a weekly schedule.
 
 ## Commits
 

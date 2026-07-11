@@ -27,10 +27,10 @@ Bit-factor tags: `⚖️` genuinely improves the cup even for one person · `�
 
 *Can I reproduce the exact result deterministically, every time?*
 
-- **Brew by ratio, weighed** `[low] ⚖️` — Fix a coffee-to-water ratio (1:16 for filter, 1:2 for espresso) and weigh both inputs on a scale rather than eyeballing scoops. This single habit removes the largest source of cup-to-cup variance there is. Cheap, unglamorous, transformative.
+- **Brew by ratio, weighed** `[low] ⚖️` — Fix a coffee-to-water ratio (1:16 for filter, 1:2 for espresso) and weigh both inputs on a scale rather than eyeballing scoops. This single habit removes one of the largest sources of cup-to-cup variance there is. Cheap, unglamorous, transformative.
 - **Control every variable to a number** `[med] ⚖️` — Dose (g), yield (g), time (s), water temperature (°C), grind setting. Pin all five and the cup becomes a function you can actually reason about, changing one input at a time. This is the whole game.
 - **Puck prep: WDT and RDT** `[med] ⚖️` — Two distinct techniques often used together. The Weiss Distribution Technique stirs the grounds *in the basket* with fine needles to break clumps and even out the bed, so water flows uniformly instead of channeling. The Ross Droplet Technique adds a drop of water to the beans *before grinding* to cut static, which reduces grounds retention and scatter (the static-control effect has been studied in published research). Related in spirit, different in mechanism — fussy, repeatable, effective.
-- **Fixed water recipe** `[med] ⚖️` — Brew with the same water every time — a specific bottled water, or water built to a recipe (see Optimization) — so the mineral content, which is most of what you taste, stops being a random variable set by your municipality.
+- **Fixed water recipe** `[med] ⚖️` — Brew with the same water every time — a specific bottled water, or water built to a recipe (see Optimization) — so the mineral content, which meaningfully shapes how the coffee extracts and tastes, stops being a random variable set by your municipality.
 - **Control the bean's rest** `[high] 🎭` — Coffee degasses for days after roasting, so the "same" beans behave differently on day 3 than day 14. Logging roast date and only pulling shots inside a fixed rest window is real practice for a competition and delightful overkill for a Tuesday.
 
 ## 3. Automation
@@ -47,7 +47,7 @@ Bit-factor tags: `⚖️` genuinely improves the cup even for one person · `�
 *What am I eyeballing that I could measure?*
 
 - **A scale with a built-in timer** `[low] ⚖️` — Brewing on a scale that shows accumulating weight and elapsed time turns "about right" into two live numbers. The cheapest instrumentation upgrade and the one that changes behavior most.
-- **A refractometer for extraction yield** `[high] 🎭` — A refractometer reads the total dissolved solids in the finished cup, from which you compute *extraction yield* — the percentage of the coffee bean that made it into the water. It turns a vague "tastes sour" into a number you can act on: a low yield often points toward under-extraction, so you grind finer and re-measure. Genuinely how professionals dial in, and comically precise for a home cup.
+- **A refractometer for extraction yield** `[high] 🎭` — A refractometer reads the total dissolved solids in the finished cup, from which you compute *extraction yield* — the percentage of the coffee bean that made it into the water. It turns a vague "tastes sour" into a number you can act on: a low yield is one signal of under-extraction (channeling, temperature, and ratio all play in), so you adjust one variable and re-measure. Genuinely how professionals dial in, and comically precise for a home cup.
 - **Full pressure/flow/temperature logging** `[high] 🎭` — High-end espresso machines record the complete pressure, flow-rate, and temperature curve of every shot and graph it, so you can compare this morning's shot to last week's as time-series data. Observability so complete your coffee has a Grafana dashboard.
 - **A pressure gauge on the group** `[med] 🎭` — A gauge showing the actual brew pressure during extraction, so "9 bar" is a reading you watch rather than a spec you trust. Instrumenting a variable most people never see.
 
@@ -64,7 +64,7 @@ Bit-factor tags: `⚖️` genuinely improves the cup even for one person · `�
 
 *What is my backup, and what happens when the primary fails?*
 
-- **Beans frozen in single-dose portions** `[med] ⚖️` — Freezing coffee in airtight single-shot portions slows staling and is widely practiced by competitive baristas, so a bad-supply week never means bad coffee. Real, effective, and only faintly doomsday-prepper.
+- **Beans frozen in single-dose portions** `[med] ⚖️` — Competitive baristas widely freeze coffee in airtight single-shot portions to keep beans tasting fresh for months, so a bad-supply week never means bad coffee. Real, effective, and only faintly doomsday-prepper.
 - **A backup manual brewer** `[low] ⚖️` — A cheap pour-over cone or press in the cupboard means a dead machine on a Monday is an inconvenience, not a crisis. The one resilience item nobody regrets.
 - **A spare grinder and wear parts** `[high] 🎭` — Keeping a second grinder and a drawer of gaskets, screens, and shower heads on hand so no single component failure interrupts service. High availability for a household of one.
 
@@ -111,7 +111,7 @@ Everything above the coda is real, and any of it will reward the time if the rab
 
 ## Prior art & sources
 
-The catalog above draws on published standards, peer-reviewed work, and established professional practice. A representative set, tagged by kind:
+Sources mapped to the catalog claims they back, tagged by kind. Items with no row here (grind-by-weight dosing, smart-plug warm-up, café change control, shot journals, producer-level traceability, and the like) rest on established professional or community practice rather than a citable document — they are real, but you verify them by walking into a specialty café, not by following a link.
 
 - **Golden ratio, extraction yield & TDS** — [SCA Coffee Brewing Control Chart](https://static1.squarespace.com/static/587af1d4db29d69a1a226b95/t/60aece65e4f2134d99f6e646/1622068839009/SCA+Brewing+Chart+-+Revised+March+2019-US-Letter.pdf), [SCA Coffee Standards](https://sca.coffee/research/coffee-standards) `[standard]`
 - **Water chemistry shapes flavor** — *Water for Coffee*, [Colonna-Dashwood & Hendon](https://maxwelldashwood.com/products/water-for-coffee) `[research/practice]`

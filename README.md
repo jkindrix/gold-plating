@@ -28,7 +28,7 @@ Every entry follows [`_template.md`](./_template.md): a framing of the subject, 
 
 The flagship demonstration of the project is the repo you are reading. **Gold-Plating over-engineers its own infrastructure**, and every feature it turns on is simultaneously a live, verifiable example in the [Gold-Plating a Git Repo](./entries/git-repo.md) entry. The container is the content. Where the repo enables a governance rule, a template, or a check, the corresponding catalog item cites the real file that implements it.
 
-To keep that self-reference from quietly rotting, every citation points at an actual file in this repo, and a continuous-integration check ([`scripts/lint-entries.py`](./scripts/lint-entries.py), run by [`.github/workflows/lint.yml`](./.github/workflows/lint.yml)) fails the build if a cited path goes missing, a catalog item loses its tags, or an entry drops its coda. It guarantees citation *resolution* and structure — not the truth of the prose — which is a modest promise, kept honestly, and the point.
+To keep that self-reference from quietly rotting, every citation points at an actual file in this repo, and a check ([`scripts/lint-entries.py`](./scripts/lint-entries.py), runnable locally anytime and wired into CI by [`.github/workflows/lint.yml`](./.github/workflows/lint.yml) for when the repo is hosted) fails the build if a cited path goes missing or escapes the repo, a catalog item loses its tags, or an entry drops its coda or sources. It guarantees citation *resolution* and structure — not the truth of the prose — which is a modest promise, kept honestly, and the point.
 
 ## Index
 
@@ -50,8 +50,10 @@ Dual-licensed, because this repo is both prose and code. The split is **by path*
 
 | Path | License |
 |------|---------|
-| `entries/**`, `README.md`, `axes.md`, `_template.md`, `CONTRIBUTING.md` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| `scripts/**`, `.github/**` (issue & PR templates included), `.gitignore` | [MIT](./LICENSE) |
+| `entries/**`, `README.md`, `axes.md`, `_template.md`, `CONTRIBUTING.md` | [CC BY 4.0](./LICENSE-CC-BY-4.0) |
+| `scripts/**`, `.github/**` (issue & PR templates included), `.gitignore` | [MIT](./LICENSE-MIT) |
+
+The root [`LICENSE`](./LICENSE) file restates this mapping for humans and license scanners.
 
 In short: **the writing is CC BY 4.0** (quote it, translate it, remix it, write your own entries in this format — just keep the attribution) and **the code and configuration are MIT**. The two edge cases the split resolves on purpose: `_template.md` is prose scaffolding, so it goes with the writing (CC BY 4.0); the `.github/` issue and pull-request templates are configuration, so they're MIT.
 
