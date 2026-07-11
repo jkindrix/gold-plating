@@ -6,7 +6,7 @@
 
 **Gold-plating** is the software-engineering term for adding effort or sophistication beyond what a task warrants. This project takes that as an invitation rather than a warning. Each entry picks a subject — a Git repo, a cup of coffee, a pile of laundry — and catalogs the *complete* professional-grade surface for over-engineering it: every gate, every automation, every measurement, every provenance ritual that a serious practitioner might apply at industrial scale, aimed squarely at something that does not remotely need it.
 
-The joke is the scale mismatch. The value is that the joke is a complete education. Read the coffee entry and you'll come out understanding extraction yield, water chemistry, and refractometry — you just arrived through the funny door.
+The joke is the scale mismatch. The value is that the joke is a real education — each entry is backed by sources, so it teaches something you can check. Read the coffee entry and you'll come out understanding extraction yield, water chemistry, and refractometry — you just arrived through the funny door.
 
 ## The two rules that keep it honest
 
@@ -22,7 +22,7 @@ A wide range of subjects can be over-engineered along some subset of the same ni
 
 ## How an entry is structured
 
-Every entry follows [`_template.md`](./_template.md): a framing of the subject, an axis-grouped catalog with effort and "bit-factor" tags, and the mandatory sincere coda. Structural identity across entries is a feature — it makes the catalogs legible and makes the axes comparable across wildly different subjects. Each entry is *narratively* self-contained: it assumes you've read nothing else here.
+Every entry follows [`_template.md`](./_template.md): a framing of the subject, an axis-grouped catalog with effort and "bit-factor" tags, the mandatory sincere coda, and a Prior art & sources section that backs the claims with verifiable references. Structural identity across entries is a feature — it makes the catalogs legible and makes the axes comparable across wildly different subjects. Each entry is *narratively* self-contained: it assumes you've read nothing else here.
 
 ## This repo gold-plates itself
 
@@ -37,6 +37,7 @@ To keep that self-reference from quietly rotting, every citation points at an ac
 | Entry | Subject | Status |
 |-------|---------|--------|
 | [Gold-Plating a Git Repo](./entries/git-repo.md) | A version-controlled repository and its forge | Draft — the self-referential flagship |
+| [Gold-Plating a Cup of Coffee](./entries/coffee.md) | A single morning cup | Draft |
 
 <!-- Index note: a flat table is honest at this size. Past ~15 entries, group it
      by domain or generate it from entry frontmatter — but not before, since
@@ -45,9 +46,13 @@ To keep that self-reference from quietly rotting, every citation points at an ac
 
 ## License
 
-Dual-licensed, because this repo is both prose and code:
+Dual-licensed, because this repo is both prose and code. The split is **by path**, so there's no ambiguity about any given file:
 
-- **Prose and catalog content** (everything in `entries/`, the `.md` documents, this README) — [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). Quote it, translate it, remix it, write your own entries in this format — just keep the attribution.
-- **Code and configuration** (scripts, workflows, templates, config) — [MIT](./LICENSE).
+| Path | License |
+|------|---------|
+| `entries/**`, `README.md`, `axes.md`, `_template.md`, `CONTRIBUTING.md` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `scripts/**`, `.github/**` (issue & PR templates included), `.gitignore` | [MIT](./LICENSE) |
+
+In short: **the writing is CC BY 4.0** (quote it, translate it, remix it, write your own entries in this format — just keep the attribution) and **the code and configuration are MIT**. The two edge cases the split resolves on purpose: `_template.md` is prose scaffolding, so it goes with the writing (CC BY 4.0); the `.github/` issue and pull-request templates are configuration, so they're MIT.
 
 Attribution is deliberate: the framework here — the nine axes, the Prime Rule and Coda Invariant, the tag system — is the original work, and keeping its provenance attached is, fittingly, axis #5.

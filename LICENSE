@@ -2,11 +2,13 @@ MIT License
 
 Copyright (c) 2026 Justin Kindrix
 
-This license covers the CODE and CONFIGURATION in this repository (scripts,
-workflows, templates, and configuration files). The PROSE and CATALOG CONTENT
-(the Markdown documents, including everything under entries/) is licensed
-separately under Creative Commons Attribution 4.0 International (CC BY 4.0):
+This MIT license covers the CODE and CONFIGURATION in this repository:
+scripts/**, .github/** (including the issue and pull-request templates), and
+.gitignore. The PROSE and CATALOG CONTENT — entries/**, README.md, axes.md,
+_template.md, and CONTRIBUTING.md — is licensed separately under Creative
+Commons Attribution 4.0 International (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/
+See the License table in README.md for the authoritative path-based mapping.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
