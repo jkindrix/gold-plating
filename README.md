@@ -1,5 +1,7 @@
 # Gold-Plating
 
+[![lint entries](https://github.com/jkindrix/gold-plating/actions/workflows/lint.yml/badge.svg)](https://github.com/jkindrix/gold-plating/actions/workflows/lint.yml)
+
 *Opportunity catalogs for over-engineering anything — exhaustively, affectionately, and honestly.*
 
 ---
@@ -28,7 +30,7 @@ Every entry follows [`_template.md`](./_template.md): a framing of the subject, 
 
 The flagship demonstration of the project is the repo you are reading. **Gold-Plating over-engineers its own infrastructure**, and every feature it turns on is simultaneously a live, verifiable example in the [Gold-Plating a Git Repo](./entries/git-repo.md) entry. The container is the content. Where the repo enables a governance rule, a template, or a check, the corresponding catalog item cites the real file that implements it.
 
-To keep that self-reference from quietly rotting, every citation points at an actual file in this repo, and a check ([`scripts/lint-entries.py`](./scripts/lint-entries.py), runnable locally anytime and wired into CI by [`.github/workflows/lint.yml`](./.github/workflows/lint.yml) for when the repo is hosted) fails the build if a cited path goes missing or escapes the repo, a catalog item loses its tags, or an entry drops its coda or sources. It guarantees citation *resolution* and structure — not the truth of the prose — which is a modest promise, kept honestly, and the point.
+To keep that self-reference from quietly rotting, every citation points at an actual file in this repo, and a check ([`scripts/lint-entries.py`](./scripts/lint-entries.py), runnable locally anytime and run in CI by [`.github/workflows/lint.yml`](./.github/workflows/lint.yml) as a required check on main) fails the build if a cited path goes missing or escapes the repo, a catalog item loses its tags, or an entry drops its coda or sources. It guarantees citation *resolution* and structure — not the truth of the prose — which is a modest promise, kept honestly, and the point.
 
 ## Index
 
